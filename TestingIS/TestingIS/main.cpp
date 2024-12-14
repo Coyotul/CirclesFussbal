@@ -3,6 +3,7 @@
 #include <QGraphicsView>
 #include "PlayerObjects.h"
 #include "TerrainObjects.h"
+#include "Command.h"
 
 
 int main(int argc, char* argv[]) {

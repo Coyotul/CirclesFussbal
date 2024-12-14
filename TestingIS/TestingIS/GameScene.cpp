@@ -1,5 +1,8 @@
 #include "GameScene.h"
 #include "QMessageBox"
+#include "GameScene.h"
+#include "MoveCircleCommand.h"
+#include "ApplyImpulseCommand.h"
 
 /// <summary>
 /// Handles mouse press events at the scene level to enable a drag-and-release movement
@@ -48,14 +51,24 @@ void GameScene::SetResetFunction(std::function<void(GameScene*)> ResetFunction)
 {
     m_ResetFunction = ResetFunction;
 }
-void GameScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void GameScene::addCommand(std::shared_ptr<Command> command)
 {
+    commandQueue.push_back(command);
+}
+void GameScene::executeCommands()
+{
+    for (auto& command : commandQueue) { 
+        command->execute(); 
+    } 
+    commandQueue.clear();
+}
+
+void GameScene::mousePressEvent(QGraphicsSceneMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
         if (!isDragging) {
             QGraphicsItem* item = itemAt(event->scenePos(), QTransform());
             activeCircle = dynamic_cast<DraggableCircle*>(item);
-            
-            //check if the clicked thing is ball first and disable functionality
+
             if (activeCircle && (activeCircle->isBall() || (m_game->GetCurrentPlayer() != activeCircle->GetPlayer())))
             {
                 activeCircle = nullptr;
@@ -65,7 +78,6 @@ void GameScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
             if (activeCircle) {
                 isDragging = true;
                 initialMousePos = event->scenePos();
-                //activeCircle->setCursor(Qt::ClosedHandCursor); // Set cursor using Qt::CursorShape
             }
 
         }
@@ -74,16 +86,13 @@ void GameScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
                 QPointF finalMousePos = event->scenePos();
                 QPointF impulse = initialMousePos - finalMousePos;
 
-                // Limit the impulse magnitude
                 const double maxSpeed = 20.0;
                 double magnitude = std::sqrt(impulse.x() * impulse.x() + impulse.y() * impulse.y());
                 if (magnitude > maxSpeed) {
                     impulse *= maxSpeed / magnitude;
                 }
 
-                activeCircle->applyImpulse(impulse);
-                //activeCircle->setCursor(Qt::OpenHandCursor); // Set cursor using Qt::CursorShape
-
+                addCommand(std::make_shared<ApplyImpulseCommand>(activeCircle, impulse));
                 isDragging = false;
                 activeCircle = nullptr;
 
@@ -94,6 +103,8 @@ void GameScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
 
     QGraphicsScene::mousePressEvent(event);
 }
+
+
 
 void GameScene::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
@@ -202,6 +213,8 @@ void GameScene::ResetBoard()
 
 
 void GameScene::updateCircles() {
+    executeCommands();
+
     bool resetTriggered = false;
 
     for (QGraphicsItem* item : items()) {

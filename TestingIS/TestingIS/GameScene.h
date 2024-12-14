@@ -6,6 +6,7 @@
 #include "DraggableCircle.h"
 #include "IGame.h"
 #include "IGameListener.h"
+#include "Command.h"
 
 class GameScene : public QGraphicsScene, public IGameListener {
     Q_OBJECT
@@ -25,6 +26,9 @@ public:
 
     void SetResetFunction(std::function<void(GameScene*)> ResetFunction);
 
+    void addCommand(std::shared_ptr<Command> command); 
+    void executeCommands();
+
 protected:
     bool isDragging = false;
     QPointF initialMousePos;
@@ -40,11 +44,14 @@ protected:
 private slots:
     void updateCircles();
 
+
 private:
     std::shared_ptr<IGame> m_game;
     QGraphicsRectItem* m_leftGoal = nullptr;
     QGraphicsRectItem* m_rightGoal = nullptr;
     std::function<void(GameScene*)> m_ResetFunction;
+
+    std::vector<std::shared_ptr<Command>> commandQueue; public:
 
     bool m_leftGoalScored = false;  // Tracks if a left-side goal has been scored
     bool m_rightGoalScored = false; // Tracks if a right-side goal has been scored
