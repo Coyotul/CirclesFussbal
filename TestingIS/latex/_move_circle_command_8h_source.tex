@@ -1,0 +1,23 @@
+\doxysection{Move\+Circle\+Command.\+h}
+\hypertarget{_move_circle_command_8h_source}{}\label{_move_circle_command_8h_source}\index{TestingIS/MoveCircleCommand.h@{TestingIS/MoveCircleCommand.h}}
+\mbox{\hyperlink{_move_circle_command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_draggable_circle_8h}{DraggableCircle.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_move_circle_command}{MoveCircleCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ circle;\ }
+\DoxyCodeLine{00015\ \ \ \ \ QPointF\ newPosition;\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_move_circle_command_a79772b5a645849ee96033da6399696bb}{MoveCircleCommand}}(\mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ circle,\ QPointF\ newPos)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ :\ circle(circle),\ newPosition(newPos)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6}{execute}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ circle-\/>setPos(newPosition);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

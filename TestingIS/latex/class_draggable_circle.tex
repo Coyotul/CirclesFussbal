@@ -1,0 +1,249 @@
+\doxysection{Draggable\+Circle Class Reference}
+\hypertarget{class_draggable_circle}{}\label{class_draggable_circle}\index{DraggableCircle@{DraggableCircle}}
+
+
+A draggable circle in a Qt-\/based graphics scene with collision detection and physics handling.  
+
+
+
+
+{\ttfamily \#include $<$Draggable\+Circle.\+h$>$}
+
+Inheritance diagram for Draggable\+Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_draggable_circle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_draggable_circle_a9e91482720de16207833bf3a5dc154c6}{Draggable\+Circle}} (qreal x, qreal y, qreal width, bool \mbox{\hyperlink{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3}{is\+Ball}}, QGraphics\+Item \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_draggable_circle}{Draggable\+Circle} object. \end{DoxyCompactList}\item 
+QRectF \mbox{\hyperlink{class_draggable_circle_aafead2f776fc6a595dd00cb3a3946b1e}{bounding\+Rect}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the bounding rectangle of the circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_a84d684e9977d3ca482045bc239875e1f}{set\+Color}} (const QColor \&color)
+\begin{DoxyCompactList}\small\item\em Sets the color of the circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_ae0706d834eb3200dbdb6e38d76ecd1ff}{paint}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}, QWidget \texorpdfstring{$\ast$}{*}) override
+\begin{DoxyCompactList}\small\item\em Paints the circle on the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_a8432e5b0910755ed7962278df5f8b391}{update\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Updates the position of the circle and handles collisions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_af9bf56d77b0e2e2c937bb942e3c3e26f}{handle\+Collision}} (\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*}other\+Circle)
+\begin{DoxyCompactList}\small\item\em Handles collision response between two draggable circles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_a71ea272eb0b572dd00469d3bc9daee40}{apply\+Impulse}} (const QPointF \&impulse)
+\begin{DoxyCompactList}\small\item\em Applies an external force (impulse) to the circle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3}{is\+Ball}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the circle is the ball. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_a8f9d6aa0e472882a6b863169a2608138}{freeze\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Freezes the position of the circle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_draggable_circle_a00078cfa8f74f0d72947373a30e3ddc4}{unfreeze\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Unfreezes the position of the circle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} \mbox{\hyperlink{class_draggable_circle_a51b8e33ceab89485b442deb37fcde5b8}{Get\+Player}} () const
+\begin{DoxyCompactList}\small\item\em Gets the player associated with the circle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_draggable_circle_aaee1c962af07ee81d305f76bacc976ed}{pos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A draggable circle in a Qt-\/based graphics scene with collision detection and physics handling. 
+
+This class represents a circle that can be moved and manipulated within a Qt {\ttfamily QGraphics\+Scene}. It supports collision detection, velocity handling, and external forces like impulses. The circle can also be assigned to a player and visually rendered in the scene. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_draggable_circle_a9e91482720de16207833bf3a5dc154c6}\index{DraggableCircle@{DraggableCircle}!DraggableCircle@{DraggableCircle}}
+\index{DraggableCircle@{DraggableCircle}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{DraggableCircle()}{DraggableCircle()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a9e91482720de16207833bf3a5dc154c6} 
+Draggable\+Circle\+::\+Draggable\+Circle (\begin{DoxyParamCaption}\item[{qreal}]{x}{, }\item[{qreal}]{y}{, }\item[{qreal}]{width}{, }\item[{bool}]{is\+Ball}{, }\item[{QGraphics\+Item \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_draggable_circle}{Draggable\+Circle} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the circle\textquotesingle{}s initial position. \\
+\hline
+{\em y} & The y-\/coordinate of the circle\textquotesingle{}s initial position. \\
+\hline
+{\em width} & The width (and height) of the circle. \\
+\hline
+{\em is\+Ball} & Flag indicating if this circle is the ball. \\
+\hline
+{\em parent} & The parent {\ttfamily QGraphics\+Item}, default is {\ttfamily nullptr}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_draggable_circle_a71ea272eb0b572dd00469d3bc9daee40}\index{DraggableCircle@{DraggableCircle}!applyImpulse@{applyImpulse}}
+\index{applyImpulse@{applyImpulse}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{applyImpulse()}{applyImpulse()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a71ea272eb0b572dd00469d3bc9daee40} 
+void Draggable\+Circle\+::apply\+Impulse (\begin{DoxyParamCaption}\item[{const QPointF \&}]{impulse}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies an external force (impulse) to the circle. 
+
+This method modifies the circle\textquotesingle{}s velocity by adding the specified impulse vector, which simulates an external force acting on the circle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em impulse} & The impulse vector to apply to the circle\textquotesingle{}s velocity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_draggable_circle_aafead2f776fc6a595dd00cb3a3946b1e}\index{DraggableCircle@{DraggableCircle}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_aafead2f776fc6a595dd00cb3a3946b1e} 
+QRectF Draggable\+Circle\+::bounding\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Returns the bounding rectangle of the circle. 
+
+Defines the bounding rectangle of the circle item. This rectangle specifies the clickable and drawable area for the circle, which is required for collision detection and rendering.
+
+This method is used for collision detection and rendering. It defines the clickable and drawable area of the circle.
+
+\begin{DoxyReturn}{Returns}
+A QRectF representing the bounds of the circle in local coordinates.
+
+A QRectF representing the bounds of the circle in local coordinates. The rectangle\textquotesingle{}s dimensions are equal to the width and height of the circle. 
+\end{DoxyReturn}
+\Hypertarget{class_draggable_circle_a8f9d6aa0e472882a6b863169a2608138}\index{DraggableCircle@{DraggableCircle}!freezePosition@{freezePosition}}
+\index{freezePosition@{freezePosition}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{freezePosition()}{freezePosition()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a8f9d6aa0e472882a6b863169a2608138} 
+void Draggable\+Circle\+::freeze\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Freezes the position of the circle. 
+
+This method stops the circle\textquotesingle{}s movement and disables dragging and focus. It is useful for temporarily halting the circle\textquotesingle{}s behavior, such as during pauses or game logic events. \Hypertarget{class_draggable_circle_a51b8e33ceab89485b442deb37fcde5b8}\index{DraggableCircle@{DraggableCircle}!GetPlayer@{GetPlayer}}
+\index{GetPlayer@{GetPlayer}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{GetPlayer()}{GetPlayer()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a51b8e33ceab89485b442deb37fcde5b8} 
+\mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} Draggable\+Circle\+::\+Get\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the player associated with the circle. 
+
+This method returns the player associated with the circle. The player is determined by the circle\textquotesingle{}s color.
+
+\begin{DoxyReturn}{Returns}
+The player associated with the circle. 
+\end{DoxyReturn}
+\Hypertarget{class_draggable_circle_af9bf56d77b0e2e2c937bb942e3c3e26f}\index{DraggableCircle@{DraggableCircle}!handleCollision@{handleCollision}}
+\index{handleCollision@{handleCollision}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{handleCollision()}{handleCollision()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_af9bf56d77b0e2e2c937bb942e3c3e26f} 
+void Draggable\+Circle\+::handle\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*}}]{other\+Circle}{}\end{DoxyParamCaption})}
+
+
+
+Handles collision response between two draggable circles. 
+
+This method calculates the response when this circle collides with another circle. It uses basic physics principles to compute the collision normal, relative velocity, impulse, and overlap correction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Circle} & The other circle involved in the collision. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3}\index{DraggableCircle@{DraggableCircle}!isBall@{isBall}}
+\index{isBall@{isBall}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{isBall()}{isBall()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3} 
+bool Draggable\+Circle\+::is\+Ball (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the circle is the ball. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this circle represents the ball; {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_draggable_circle_ae0706d834eb3200dbdb6e38d76ecd1ff}\index{DraggableCircle@{DraggableCircle}!paint@{paint}}
+\index{paint@{paint}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_ae0706d834eb3200dbdb6e38d76ecd1ff} 
+void Draggable\+Circle\+::paint (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}}]{}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Paints the circle on the scene. 
+
+This method is responsible for rendering the circle on the scene with the assigned color. It overrides the {\ttfamily QGraphics\+Object\+::paint()} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & The painter used to render the circle. \\
+\hline
+{\em option} & The style option for the item. \\
+\hline
+{\em widget} & The widget on which the item is painted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_draggable_circle_a84d684e9977d3ca482045bc239875e1f}\index{DraggableCircle@{DraggableCircle}!setColor@{setColor}}
+\index{setColor@{setColor}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a84d684e9977d3ca482045bc239875e1f} 
+void Draggable\+Circle\+::set\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Sets the color of the circle. 
+
+This method allows setting the color of the circle. The color is used when painting the circle on the scene. If the color is red, the circle is assigned to {\ttfamily PLAYER1}; otherwise, it is assigned to {\ttfamily PLAYER2}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to set for the circle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_draggable_circle_a00078cfa8f74f0d72947373a30e3ddc4}\index{DraggableCircle@{DraggableCircle}!unfreezePosition@{unfreezePosition}}
+\index{unfreezePosition@{unfreezePosition}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{unfreezePosition()}{unfreezePosition()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a00078cfa8f74f0d72947373a30e3ddc4} 
+void Draggable\+Circle\+::unfreeze\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unfreezes the position of the circle. 
+
+This method re-\/enables the circle\textquotesingle{}s movement, allowing it to be dragged and receive focus again. \Hypertarget{class_draggable_circle_a8432e5b0910755ed7962278df5f8b391}\index{DraggableCircle@{DraggableCircle}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily \label{class_draggable_circle_a8432e5b0910755ed7962278df5f8b391} 
+void Draggable\+Circle\+::update\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the position of the circle and handles collisions. 
+
+Updates the position of the circle in the scene based on its current velocity or any external factors (e.\+g., impulse or animation). This method ensures that the circle respects the scene boundaries and avoids overlapping with other items.
+
+This method updates the position of the circle based on its current velocity. It checks for collisions with the scene\textquotesingle{}s boundaries and other items and responds accordingly. It also applies friction to slow down the circle\textquotesingle{}s velocity.
+
+This method can be used to integrate physics, collision detection, or smooth animations when moving the circle within the scene. 
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_draggable_circle_aaee1c962af07ee81d305f76bacc976ed}\index{DraggableCircle@{DraggableCircle}!pos@{pos}}
+\index{pos@{pos}!DraggableCircle@{DraggableCircle}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \label{class_draggable_circle_aaee1c962af07ee81d305f76bacc976ed} 
+QPointF Draggable\+Circle\+::pos\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Testing\+IS/\mbox{\hyperlink{_draggable_circle_8h}{Draggable\+Circle.\+h}}\item 
+Testing\+IS/\mbox{\hyperlink{_draggable_circle_8cpp}{Draggable\+Circle.\+cpp}}\end{DoxyCompactItemize}

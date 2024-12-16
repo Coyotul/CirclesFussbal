@@ -1,0 +1,49 @@
+\doxysection{Command Class Reference}
+\hypertarget{class_command}{}\label{class_command}\index{Command@{Command}}
+
+
+Abstract base class for all command types.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all command types. 
+
+The \doxylink{class_command}{Command} class is an abstract base class for implementing the \doxylink{class_command}{Command} design pattern. It defines an interface for executing commands. Concrete command classes will derive from this class and implement the {\ttfamily \doxylink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute()}} method to perform specific actions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7} 
+virtual void Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the command. 
+
+This pure virtual function must be implemented by derived classes. It defines the action that will be executed when the command is invoked. 
+
+Implemented in \mbox{\hyperlink{class_apply_impulse_command_a80c6720e566c9d69115dc6dc10ce99a0}{Apply\+Impulse\+Command}}, and \mbox{\hyperlink{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6}{Move\+Circle\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Testing\+IS/\mbox{\hyperlink{_command_8h}{Command.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,42 @@
+\doxysection{IGame.\+h}
+\hypertarget{_i_game_8h_source}{}\label{_i_game_8h_source}\index{Soccer/IGame.h@{Soccer/IGame.h}}
+\mbox{\hyperlink{_i_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game_listener}{IGameListener}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game}{IGame}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{\string~IGame}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<EPlayer>\ \mbox{\hyperlink{class_i_game_a4e5911dea1e497e4d2e91313de9ff9a6}{GetPlayerObjects}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}}\ \mbox{\hyperlink{class_i_game_a76e7f18433de5b988e19b6a221a6ac24}{GetCurrentPlayer}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<IGame>\ \mbox{\hyperlink{class_i_game_a38303e8985020b4efab9d598649938a7}{Produce}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a5d08604be18efc5b6598dbcce51e4582}{AddListener}}(\mbox{\hyperlink{class_i_game_listener}{IGameListener}}*\ gameListener)\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a4f736ed088a9a081ea5cdb356e4abbf3}{RemoveListener}}(\mbox{\hyperlink{class_i_game_listener}{IGameListener}}*\ gameListener)\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a4a4212c7893229b53774f35250ba7517}{SwitchPlayers}}()\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_ad1112108dd80dd4b02337c98d046f459}{NotifyListenersOnWin}}()\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a50100ff153ce69f416fe8c9b4c21baed}{ResetGame}}()\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a7b81b62800b0b21d5a7e110e11b94bde}{UpdateScore}}(\mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}}\ scoredOn)\ =\ 0;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_post}{Post}}\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_post_ad75edce27b7ca385677ff4ce1acb8637}{x}};\ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_post_a84018aa596e69e8ad32503093e025160}{y1}};\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_post_a1d3128e4d006fda7b822ab9c983da383}{y2}};\ }
+\DoxyCodeLine{00082\ \};}
+
+\end{DoxyCode}

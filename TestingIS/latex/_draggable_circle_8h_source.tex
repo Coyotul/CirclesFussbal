@@ -1,0 +1,53 @@
+\doxysection{Draggable\+Circle.\+h}
+\hypertarget{_draggable_circle_8h_source}{}\label{_draggable_circle_8h_source}\index{TestingIS/DraggableCircle.h@{TestingIS/DraggableCircle.h}}
+\mbox{\hyperlink{_draggable_circle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QGraphicsObject>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QPropertyAnimation>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_player_8h}{EPlayer.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}\ :\ \textcolor{keyword}{public}\ QGraphicsObject\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Q\_PROPERTY(QPointF\ \mbox{\hyperlink{class_draggable_circle_aaee1c962af07ee81d305f76bacc976ed}{pos}}\ READ\ \mbox{\hyperlink{class_draggable_circle_aaee1c962af07ee81d305f76bacc976ed}{pos}}\ WRITE\ setPos)}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle_a9e91482720de16207833bf3a5dc154c6}{DraggableCircle}}(qreal\ x,\ qreal\ y,\ qreal\ width,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3}{isBall}},\ QGraphicsItem*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \ \ \ \ QRectF\ \mbox{\hyperlink{class_draggable_circle_aafead2f776fc6a595dd00cb3a3946b1e}{boundingRect}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_a84d684e9977d3ca482045bc239875e1f}{setColor}}(\textcolor{keyword}{const}\ QColor\&\ color);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_ae0706d834eb3200dbdb6e38d76ecd1ff}{paint}}(QPainter*\ painter,\ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem*,\ QWidget*)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_a8432e5b0910755ed7962278df5f8b391}{updatePosition}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_af9bf56d77b0e2e2c937bb942e3c3e26f}{handleCollision}}(\mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ otherCircle);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_a71ea272eb0b572dd00469d3bc9daee40}{applyImpulse}}(\textcolor{keyword}{const}\ QPointF\&\ impulse)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ m\_velocity\ +=\ impulse;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_draggable_circle_a60db462617b48e5ba6470171b9b3dbf3}{isBall}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_a8f9d6aa0e472882a6b863169a2608138}{freezePosition}}();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_circle_a00078cfa8f74f0d72947373a30e3ddc4}{unfreezePosition}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}}\ \mbox{\hyperlink{class_draggable_circle_a51b8e33ceab89485b442deb37fcde5b8}{GetPlayer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00134\ \ \ \ \ qreal\ m\_width,\ m\_height;\ }
+\DoxyCodeLine{00135\ \ \ \ \ QColor\ m\_color;\ }
+\DoxyCodeLine{00136\ \ \ \ \ QPointF\ m\_velocity;\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isBall;\ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}}\ m\_player;\ }
+\DoxyCodeLine{00139\ \};}
+
+\end{DoxyCode}

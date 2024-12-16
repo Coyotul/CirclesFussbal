@@ -1,0 +1,24 @@
+\doxysection{Apply\+Impulse\+Command.\+h}
+\hypertarget{_apply_impulse_command_8h_source}{}\label{_apply_impulse_command_8h_source}\index{TestingIS/ApplyImpulseCommand.h@{TestingIS/ApplyImpulseCommand.h}}
+\mbox{\hyperlink{_apply_impulse_command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_draggable_circle_8h}{DraggableCircle.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_apply_impulse_command}{ApplyImpulseCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ circle;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \ \ \ \ QPointF\ impulse;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_apply_impulse_command_a2f3e52370d3b350b0e9ea59eb1da1fa9}{ApplyImpulseCommand}}(\mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ circle,\ QPointF\ imp)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ circle(circle),\ impulse(imp)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_apply_impulse_command_a80c6720e566c9d69115dc6dc10ce99a0}{execute}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ circle-\/>\mbox{\hyperlink{class_draggable_circle_a71ea272eb0b572dd00469d3bc9daee40}{applyImpulse}}(impulse);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

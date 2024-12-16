@@ -1,0 +1,27 @@
+\doxysection{Player\+Objects.\+h}
+\hypertarget{_player_objects_8h_source}{}\label{_player_objects_8h_source}\index{TestingIS/PlayerObjects.h@{TestingIS/PlayerObjects.h}}
+\mbox{\hyperlink{_player_objects_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_scene_8h}{GameScene.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player_objects}{PlayerObjects}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<DraggableCircle*>\ m\_players;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ m\_ball;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\mbox{\hyperlink{class_game_scene}{GameScene}}*\ gameScene);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_player_objects_acfcd90a01bbfcda9f5289e0a08d790c6}{PlayerObjects}}(\mbox{\hyperlink{class_game_scene}{GameScene}}*\ gameScene);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_objects_a827c60656d8b8a5765b6b33ea7be1bd4}{ResetPositions}}(\mbox{\hyperlink{class_game_scene}{GameScene}}*\ gameScene);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ \mbox{\hyperlink{class_player_objects_a358b613662c0925a903cd0dd0de20542}{GetBall}}();}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

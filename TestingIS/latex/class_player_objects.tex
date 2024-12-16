@@ -1,0 +1,84 @@
+\doxysection{Player\+Objects Class Reference}
+\hypertarget{class_player_objects}{}\label{class_player_objects}\index{PlayerObjects@{PlayerObjects}}
+
+
+Class representing player objects (circles) in the game, including players and the ball.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Objects.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_objects_acfcd90a01bbfcda9f5289e0a08d790c6}{Player\+Objects}} (\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*}game\+Scene)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_player_objects}{Player\+Objects}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_objects_a827c60656d8b8a5765b6b33ea7be1bd4}{Reset\+Positions}} (\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*}game\+Scene)
+\begin{DoxyCompactList}\small\item\em Resets the positions of all player objects and the ball. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_player_objects_a358b613662c0925a903cd0dd0de20542}{Get\+Ball}} ()
+\begin{DoxyCompactList}\small\item\em Gets the ball object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing player objects (circles) in the game, including players and the ball. 
+
+This class manages the creation and positioning of player objects, which include both the players (represented by \doxylink{class_draggable_circle}{Draggable\+Circle} objects) and the ball. It provides methods to initialize player objects in a game scene, reset their positions, and retrieve the ball. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_objects_acfcd90a01bbfcda9f5289e0a08d790c6}\index{PlayerObjects@{PlayerObjects}!PlayerObjects@{PlayerObjects}}
+\index{PlayerObjects@{PlayerObjects}!PlayerObjects@{PlayerObjects}}
+\doxysubsubsection{\texorpdfstring{PlayerObjects()}{PlayerObjects()}}
+{\footnotesize\ttfamily \label{class_player_objects_acfcd90a01bbfcda9f5289e0a08d790c6} 
+Player\+Objects\+::\+Player\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*}}]{game\+Scene}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_player_objects}{Player\+Objects}. 
+
+This constructor initializes the player objects and adds them to the provided game scene.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Scene} & The \doxylink{class_game_scene}{Game\+Scene} object where the player objects will be added. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_objects_a358b613662c0925a903cd0dd0de20542}\index{PlayerObjects@{PlayerObjects}!GetBall@{GetBall}}
+\index{GetBall@{GetBall}!PlayerObjects@{PlayerObjects}}
+\doxysubsubsection{\texorpdfstring{GetBall()}{GetBall()}}
+{\footnotesize\ttfamily \label{class_player_objects_a358b613662c0925a903cd0dd0de20542} 
+\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*} Player\+Objects\+::\+Get\+Ball (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the ball object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{class_draggable_circle}{Draggable\+Circle} representing the ball. 
+\end{DoxyReturn}
+\Hypertarget{class_player_objects_a827c60656d8b8a5765b6b33ea7be1bd4}\index{PlayerObjects@{PlayerObjects}!ResetPositions@{ResetPositions}}
+\index{ResetPositions@{ResetPositions}!PlayerObjects@{PlayerObjects}}
+\doxysubsubsection{\texorpdfstring{ResetPositions()}{ResetPositions()}}
+{\footnotesize\ttfamily \label{class_player_objects_a827c60656d8b8a5765b6b33ea7be1bd4} 
+void Player\+Objects\+::\+Reset\+Positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*}}]{game\+Scene}{}\end{DoxyParamCaption})}
+
+
+
+Resets the positions of all player objects and the ball. 
+
+This function clears the previous player objects and ball from the scene and reinitializes them to their starting positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Scene} & The \doxylink{class_game_scene}{Game\+Scene} object where the player objects will be added after resetting. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Testing\+IS/\mbox{\hyperlink{_player_objects_8h}{Player\+Objects.\+h}}\item 
+Testing\+IS/\mbox{\hyperlink{_player_objects_8cpp}{Player\+Objects.\+cpp}}\end{DoxyCompactItemize}

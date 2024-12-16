@@ -1,0 +1,74 @@
+\doxysection{Move\+Circle\+Command Class Reference}
+\hypertarget{class_move_circle_command}{}\label{class_move_circle_command}\index{MoveCircleCommand@{MoveCircleCommand}}
+
+
+A concrete command to move a \doxylink{class_draggable_circle}{Draggable\+Circle} to a new position.  
+
+
+
+
+{\ttfamily \#include $<$Move\+Circle\+Command.\+h$>$}
+
+Inheritance diagram for Move\+Circle\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_move_circle_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_circle_command_a79772b5a645849ee96033da6399696bb}{Move\+Circle\+Command}} (\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*}circle, QPointF new\+Pos)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_move_circle_command}{Move\+Circle\+Command} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the move command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+
+
+\doxysubsection{Detailed Description}
+A concrete command to move a \doxylink{class_draggable_circle}{Draggable\+Circle} to a new position. 
+
+This class is a concrete implementation of the \doxylink{class_command}{Command} pattern. It moves a \doxylink{class_draggable_circle}{Draggable\+Circle} to a specified position when the {\ttfamily \doxylink{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6}{execute()}} method is called. The class holds a reference to the circle and its new position, encapsulating the action of moving the circle into a command object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_move_circle_command_a79772b5a645849ee96033da6399696bb}\index{MoveCircleCommand@{MoveCircleCommand}!MoveCircleCommand@{MoveCircleCommand}}
+\index{MoveCircleCommand@{MoveCircleCommand}!MoveCircleCommand@{MoveCircleCommand}}
+\doxysubsubsection{\texorpdfstring{MoveCircleCommand()}{MoveCircleCommand()}}
+{\footnotesize\ttfamily \label{class_move_circle_command_a79772b5a645849ee96033da6399696bb} 
+Move\+Circle\+Command\+::\+Move\+Circle\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_draggable_circle}{Draggable\+Circle}} \texorpdfstring{$\ast$}{*}}]{circle}{, }\item[{QPointF}]{new\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_move_circle_command}{Move\+Circle\+Command} object. 
+
+Initializes the command with the \doxylink{class_draggable_circle}{Draggable\+Circle} to be moved and the new position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em circle} & The \doxylink{class_draggable_circle}{Draggable\+Circle} that will be moved. \\
+\hline
+{\em new\+Pos} & The new position to move the circle to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6}\index{MoveCircleCommand@{MoveCircleCommand}!execute@{execute}}
+\index{execute@{execute}!MoveCircleCommand@{MoveCircleCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_move_circle_command_a403b563073e5beb49ae05ab6757086e6} 
+void Move\+Circle\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the move command. 
+
+Moves the specified \doxylink{class_draggable_circle}{Draggable\+Circle} to the new position. 
+
+Implements \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Testing\+IS/\mbox{\hyperlink{_move_circle_command_8h}{Move\+Circle\+Command.\+h}}\end{DoxyCompactItemize}

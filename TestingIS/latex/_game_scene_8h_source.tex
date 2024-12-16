@@ -1,0 +1,70 @@
+\doxysection{Game\+Scene.\+h}
+\hypertarget{_game_scene_8h_source}{}\label{_game_scene_8h_source}\index{TestingIS/GameScene.h@{TestingIS/GameScene.h}}
+\mbox{\hyperlink{_game_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QGraphicsSceneMouseEvent>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_draggable_circle_8h}{DraggableCircle.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_8h}{IGame.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_listener_8h}{IGameListener.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_scene}{GameScene}}\ :\ \textcolor{keyword}{public}\ QGraphicsScene,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game_listener}{IGameListener}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_game_scene_afad5f676b6643190df77e1c4a2c91de1}{GameScene}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_game_scene_a921b4236d2a999c3b5edd8fe1d9086e1}{\string~GameScene}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a692df67883f29693a1383606101a6081}{SetGame}}(std::shared\_ptr<IGame>\ game);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a4eb75d650e65f12f55c72fd126756c45}{OnWin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_ade8291f02f592a46b58fd969fd44d09c}{SetLeftGoalPtr}}(QGraphicsRectItem*\ leftGoal);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a592724b7903cf121e5fd1c00b8986c41}{SetRightGoalPtr}}(QGraphicsRectItem*\ rightGoal);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a3b425c0daaa946a91673f9ffde5bc1ca}{SetResetFunction}}(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_game_scene}{GameScene}}*)>\ ResetFunction);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a89b2b522751448dc45b6a541663f47ec}{addCommand}}(std::shared\_ptr<Command>\ command);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a69ae47eb67f9e55c65ede1fbfa69b662}{executeCommands}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a812ffa8f0fd22e069a002daf99e4ee4c}{mousePressEvent}}(QGraphicsSceneMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_scene_a1985c8dffe6a68864c4c0f2e577a3a7c}{mouseReleaseEvent}}(QGraphicsSceneMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCircles();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ isBallInLeftGoal(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ ball,\ \textcolor{keyword}{const}\ QPointF\&\ topLeft,\ \textcolor{keyword}{const}\ QPointF\&\ bottomLeft);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ isBallInRightGoal(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ ball,\ \textcolor{keyword}{const}\ QPointF\&\ topRight,\ \textcolor{keyword}{const}\ QPointF\&\ bottomRight);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetBoard();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ clearScene();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00125\ \ \ \ \ std::shared\_ptr<IGame>\ m\_game;\ }
+\DoxyCodeLine{00126\ \ \ \ \ QGraphicsRectItem*\ m\_leftGoal\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00127\ \ \ \ \ QGraphicsRectItem*\ m\_rightGoal\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00128\ \ \ \ \ std::function<void(\mbox{\hyperlink{class_game_scene}{GameScene}}*)>\ m\_ResetFunction;\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ std::vector<std::shared\_ptr<Command>>\ commandQueue;\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_leftGoalScored\ =\ \textcolor{keyword}{false};\ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_rightGoalScored\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDragging\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00136\ \ \ \ \ QPointF\ initialMousePos;\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{class_draggable_circle}{DraggableCircle}}*\ activeCircle\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00138\ \};}
+
+\end{DoxyCode}

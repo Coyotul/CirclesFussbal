@@ -1,0 +1,60 @@
+\doxysection{IGame\+Listener Class Reference}
+\hypertarget{class_i_game_listener}{}\label{class_i_game_listener}\index{IGameListener@{IGameListener}}
+
+
+Interface for a game listener.  
+
+
+
+
+{\ttfamily \#include $<$IGame\+Listener.\+h$>$}
+
+Inheritance diagram for IGame\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_game_listener}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}{\texorpdfstring{$\sim$}{\string~}\+IGame\+Listener}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_game_listener_a762ecd3c24b5f4d51b4db0fcb1c1c94f}{On\+Win}} ()=0
+\begin{DoxyCompactList}\small\item\em Called when the game is won. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for a game listener. 
+
+This interface allows classes to listen for game events, such as when the game is won. It provides a method for handling the win event. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}\index{IGameListener@{IGameListener}!````~IGameListener@{\texorpdfstring{$\sim$}{\string~}IGameListener}}
+\index{````~IGameListener@{\texorpdfstring{$\sim$}{\string~}IGameListener}!IGameListener@{IGameListener}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGameListener()}{\string~IGameListener()}}
+{\footnotesize\ttfamily \label{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54} 
+virtual IGame\+Listener\+::\texorpdfstring{$\sim$}{\string~}\+IGame\+Listener (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_game_listener_a762ecd3c24b5f4d51b4db0fcb1c1c94f}\index{IGameListener@{IGameListener}!OnWin@{OnWin}}
+\index{OnWin@{OnWin}!IGameListener@{IGameListener}}
+\doxysubsubsection{\texorpdfstring{OnWin()}{OnWin()}}
+{\footnotesize\ttfamily \label{class_i_game_listener_a762ecd3c24b5f4d51b4db0fcb1c1c94f} 
+virtual void IGame\+Listener\+::\+On\+Win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when the game is won. 
+
+This function is triggered when a player wins the game. Implementations should define the actions to take upon winning, such as updating the UI or scoring. 
+
+Implemented in \mbox{\hyperlink{class_game_scene_a4eb75d650e65f12f55c72fd126756c45}{Game\+Scene}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Soccer/\mbox{\hyperlink{_i_game_listener_8h}{IGame\+Listener.\+h}}\end{DoxyCompactItemize}

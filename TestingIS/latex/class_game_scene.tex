@@ -1,0 +1,238 @@
+\doxysection{Game\+Scene Class Reference}
+\hypertarget{class_game_scene}{}\label{class_game_scene}\index{GameScene@{GameScene}}
+
+
+A scene representing the game environment where the user interacts with draggable circles (players and ball).  
+
+
+
+
+{\ttfamily \#include $<$Game\+Scene.\+h$>$}
+
+Inheritance diagram for Game\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_scene}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_scene_afad5f676b6643190df77e1c4a2c91de1}{Game\+Scene}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_game_scene}{Game\+Scene} object and initializes the timer for updating circle positions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_scene_a921b4236d2a999c3b5edd8fe1d9086e1}{\texorpdfstring{$\sim$}{\string~}\+Game\+Scene}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_game_scene}{Game\+Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a692df67883f29693a1383606101a6081}{Set\+Game}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_game}{IGame}} $>$ game)
+\begin{DoxyCompactList}\small\item\em Sets the game instance associated with this scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a4eb75d650e65f12f55c72fd126756c45}{On\+Win}} () override
+\begin{DoxyCompactList}\small\item\em Callback function triggered when the game ends in a win. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_ade8291f02f592a46b58fd969fd44d09c}{Set\+Left\+Goal\+Ptr}} (QGraphics\+Rect\+Item \texorpdfstring{$\ast$}{*}left\+Goal)
+\begin{DoxyCompactList}\small\item\em Sets the pointer to the left goal item in the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a592724b7903cf121e5fd1c00b8986c41}{Set\+Right\+Goal\+Ptr}} (QGraphics\+Rect\+Item \texorpdfstring{$\ast$}{*}right\+Goal)
+\begin{DoxyCompactList}\small\item\em Sets the pointer to the right goal item in the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a3b425c0daaa946a91673f9ffde5bc1ca}{Set\+Reset\+Function}} (std\+::function$<$ void(\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*})$>$ Reset\+Function)
+\begin{DoxyCompactList}\small\item\em Sets the function to reset the board when triggered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a89b2b522751448dc45b6a541663f47ec}{add\+Command}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ command)
+\begin{DoxyCompactList}\small\item\em Adds a command to the command queue for later execution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a69ae47eb67f9e55c65ede1fbfa69b662}{execute\+Commands}} ()
+\begin{DoxyCompactList}\small\item\em Executes all commands in the command queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_game_listener_aa75029cbc38192375b5fcf175eebca54}{\texorpdfstring{$\sim$}{\string~}\+IGame\+Listener}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_scene_a812ffa8f0fd22e069a002daf99e4ee4c}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles mouse press events. Starts the drag or applies the impulse when the mouse is released. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_scene_a1985c8dffe6a68864c4c0f2e577a3a7c}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles mouse release events, ending the drag operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A scene representing the game environment where the user interacts with draggable circles (players and ball). 
+
+This class extends QGraphics\+Scene and implements \doxylink{class_i_game_listener}{IGame\+Listener}. It handles user input through mouse events, manages the game state, and updates the scene regularly. It allows players to drag circles and apply impulses to them. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_scene_afad5f676b6643190df77e1c4a2c91de1}\index{GameScene@{GameScene}!GameScene@{GameScene}}
+\index{GameScene@{GameScene}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{GameScene()}{GameScene()}}
+{\footnotesize\ttfamily \label{class_game_scene_afad5f676b6643190df77e1c4a2c91de1} 
+Game\+Scene\+::\+Game\+Scene (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_game_scene}{Game\+Scene} object and initializes the timer for updating circle positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object for this scene. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_scene_a921b4236d2a999c3b5edd8fe1d9086e1}\index{GameScene@{GameScene}!````~GameScene@{\texorpdfstring{$\sim$}{\string~}GameScene}}
+\index{````~GameScene@{\texorpdfstring{$\sim$}{\string~}GameScene}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameScene()}{\string~GameScene()}}
+{\footnotesize\ttfamily \label{class_game_scene_a921b4236d2a999c3b5edd8fe1d9086e1} 
+Game\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destructor for the \doxylink{class_game_scene}{Game\+Scene}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_scene_a89b2b522751448dc45b6a541663f47ec}\index{GameScene@{GameScene}!addCommand@{addCommand}}
+\index{addCommand@{addCommand}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{addCommand()}{addCommand()}}
+{\footnotesize\ttfamily \label{class_game_scene_a89b2b522751448dc45b6a541663f47ec} 
+void Game\+Scene\+::add\+Command (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$}]{command}{}\end{DoxyParamCaption})}
+
+
+
+Adds a command to the command queue for later execution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & A shared pointer to the command to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_scene_a69ae47eb67f9e55c65ede1fbfa69b662}\index{GameScene@{GameScene}!executeCommands@{executeCommands}}
+\index{executeCommands@{executeCommands}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{executeCommands()}{executeCommands()}}
+{\footnotesize\ttfamily \label{class_game_scene_a69ae47eb67f9e55c65ede1fbfa69b662} 
+void Game\+Scene\+::execute\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Executes all commands in the command queue. 
+
+\Hypertarget{class_game_scene_a812ffa8f0fd22e069a002daf99e4ee4c}\index{GameScene@{GameScene}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily \label{class_game_scene_a812ffa8f0fd22e069a002daf99e4ee4c} 
+void Game\+Scene\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles mouse press events. Starts the drag or applies the impulse when the mouse is released. 
+
+
+\begin{DoxyItemize}
+\item Initiates the drag if a circle is clicked.
+\item Applies an impulse to the selected circle based on the drag distance. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The mouse event. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{class_game_scene_a1985c8dffe6a68864c4c0f2e577a3a7c}\index{GameScene@{GameScene}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily \label{class_game_scene_a1985c8dffe6a68864c4c0f2e577a3a7c} 
+void Game\+Scene\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles mouse release events, ending the drag operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The mouse event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_scene_a4eb75d650e65f12f55c72fd126756c45}\index{GameScene@{GameScene}!OnWin@{OnWin}}
+\index{OnWin@{OnWin}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{OnWin()}{OnWin()}}
+{\footnotesize\ttfamily \label{class_game_scene_a4eb75d650e65f12f55c72fd126756c45} 
+void Game\+Scene\+::\+On\+Win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callback function triggered when the game ends in a win. 
+
+
+
+Implements \mbox{\hyperlink{class_i_game_listener_a762ecd3c24b5f4d51b4db0fcb1c1c94f}{IGame\+Listener}}.
+
+\Hypertarget{class_game_scene_a692df67883f29693a1383606101a6081}\index{GameScene@{GameScene}!SetGame@{SetGame}}
+\index{SetGame@{SetGame}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{SetGame()}{SetGame()}}
+{\footnotesize\ttfamily \label{class_game_scene_a692df67883f29693a1383606101a6081} 
+void Game\+Scene\+::\+Set\+Game (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_game}{IGame}} $>$}]{game}{}\end{DoxyParamCaption})}
+
+
+
+Sets the game instance associated with this scene. 
+
+Handles mouse press events at the scene level to enable a drag-\/and-\/release movement mechanic for draggable circles. This method determines whether the user has clicked on a circle and initiates or ends the drag-\/and-\/release operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & A shared pointer to the game object.\\
+\hline
+{\em event} & The mouse event containing information about the click, such as the position and mouse button used. \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyItemize}
+\item On the first click, it detects if a circle was clicked and enters "{}drag"{} mode, storing the initial position of the mouse.
+\item On the second click, it calculates an impulse vector based on the drag distance and applies the force to the selected circle.
+\item This method also manages cursor state changes for user feedback. 
+\end{DoxyItemize}
+
+// Example usage\+: // Clicking on a circle and dragging will simulate an impulse\+: Game\+Scene\texorpdfstring{$\ast$}{*} scene = new \doxylink{class_game_scene_afad5f676b6643190df77e1c4a2c91de1}{Game\+Scene()}; scene-\/\texorpdfstring{$>$}{>}mouse\+Press\+Event(new QGraphics\+Scene\+Mouse\+Event()); \Hypertarget{class_game_scene_ade8291f02f592a46b58fd969fd44d09c}\index{GameScene@{GameScene}!SetLeftGoalPtr@{SetLeftGoalPtr}}
+\index{SetLeftGoalPtr@{SetLeftGoalPtr}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{SetLeftGoalPtr()}{SetLeftGoalPtr()}}
+{\footnotesize\ttfamily \label{class_game_scene_ade8291f02f592a46b58fd969fd44d09c} 
+void Game\+Scene\+::\+Set\+Left\+Goal\+Ptr (\begin{DoxyParamCaption}\item[{QGraphics\+Rect\+Item \texorpdfstring{$\ast$}{*}}]{left\+Goal}{}\end{DoxyParamCaption})}
+
+
+
+Sets the pointer to the left goal item in the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Goal} & The left goal QGraphics\+Rect\+Item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_scene_a3b425c0daaa946a91673f9ffde5bc1ca}\index{GameScene@{GameScene}!SetResetFunction@{SetResetFunction}}
+\index{SetResetFunction@{SetResetFunction}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{SetResetFunction()}{SetResetFunction()}}
+{\footnotesize\ttfamily \label{class_game_scene_a3b425c0daaa946a91673f9ffde5bc1ca} 
+void Game\+Scene\+::\+Set\+Reset\+Function (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{class_game_scene}{Game\+Scene}} \texorpdfstring{$\ast$}{*})$>$}]{Reset\+Function}{}\end{DoxyParamCaption})}
+
+
+
+Sets the function to reset the board when triggered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reset\+Function} & A function that resets the board. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_scene_a592724b7903cf121e5fd1c00b8986c41}\index{GameScene@{GameScene}!SetRightGoalPtr@{SetRightGoalPtr}}
+\index{SetRightGoalPtr@{SetRightGoalPtr}!GameScene@{GameScene}}
+\doxysubsubsection{\texorpdfstring{SetRightGoalPtr()}{SetRightGoalPtr()}}
+{\footnotesize\ttfamily \label{class_game_scene_a592724b7903cf121e5fd1c00b8986c41} 
+void Game\+Scene\+::\+Set\+Right\+Goal\+Ptr (\begin{DoxyParamCaption}\item[{QGraphics\+Rect\+Item \texorpdfstring{$\ast$}{*}}]{right\+Goal}{}\end{DoxyParamCaption})}
+
+
+
+Sets the pointer to the right goal item in the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right\+Goal} & The right goal QGraphics\+Rect\+Item. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Testing\+IS/\mbox{\hyperlink{_game_scene_8h}{Game\+Scene.\+h}}\item 
+Testing\+IS/\mbox{\hyperlink{_game_scene_8cpp}{Game\+Scene.\+cpp}}\end{DoxyCompactItemize}

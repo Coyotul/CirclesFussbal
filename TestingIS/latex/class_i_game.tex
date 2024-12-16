@@ -1,0 +1,212 @@
+\doxysection{IGame Class Reference}
+\hypertarget{class_i_game}{}\label{class_i_game}\index{IGame@{IGame}}
+
+
+Interface representing the game.  
+
+
+
+
+{\ttfamily \#include $<$IGame.\+h$>$}
+
+Inheritance diagram for IGame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{\texorpdfstring{$\sim$}{\string~}\+IGame}} ()=default
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} $>$ \mbox{\hyperlink{class_i_game_a4e5911dea1e497e4d2e91313de9ff9a6}{Get\+Player\+Objects}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the list of player objects in the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} \mbox{\hyperlink{class_i_game_a76e7f18433de5b988e19b6a221a6ac24}{Get\+Current\+Player}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current player. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a5d08604be18efc5b6598dbcce51e4582}{Add\+Listener}} (\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} \texorpdfstring{$\ast$}{*}game\+Listener)=0
+\begin{DoxyCompactList}\small\item\em Adds a listener to the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a4f736ed088a9a081ea5cdb356e4abbf3}{Remove\+Listener}} (\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} \texorpdfstring{$\ast$}{*}game\+Listener)=0
+\begin{DoxyCompactList}\small\item\em Removes a listener from the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a4a4212c7893229b53774f35250ba7517}{Switch\+Players}} ()=0
+\begin{DoxyCompactList}\small\item\em Switches the active player in the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_ad1112108dd80dd4b02337c98d046f459}{Notify\+Listeners\+On\+Win}} ()=0
+\begin{DoxyCompactList}\small\item\em Notifies all listeners that a player has won. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a50100ff153ce69f416fe8c9b4c21baed}{Reset\+Game}} ()=0
+\begin{DoxyCompactList}\small\item\em Resets the game to its initial state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_game_a7b81b62800b0b21d5a7e110e11b94bde}{Update\+Score}} (\mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} scored\+On)=0
+\begin{DoxyCompactList}\small\item\em Updates the score of a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_game}{IGame}} $>$ \mbox{\hyperlink{class_i_game_a38303e8985020b4efab9d598649938a7}{Produce}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a shared pointer to an {\ttfamily \doxylink{class_i_game}{IGame}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface representing the game. 
+
+This interface defines the basic operations of the game, including switching players, notifying listeners, updating the score, and resetting the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}\index{IGame@{IGame}!````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}}
+\index{````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGame()}{\string~IGame()}}
+{\footnotesize\ttfamily \label{class_i_game_a91b14c1b6019364120d5c5e4d4c64414} 
+virtual IGame\+::\texorpdfstring{$\sim$}{\string~}\+IGame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_game_a5d08604be18efc5b6598dbcce51e4582}\index{IGame@{IGame}!AddListener@{AddListener}}
+\index{AddListener@{AddListener}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{AddListener()}{AddListener()}}
+{\footnotesize\ttfamily \label{class_i_game_a5d08604be18efc5b6598dbcce51e4582} 
+virtual void IGame\+::\+Add\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} \texorpdfstring{$\ast$}{*}}]{game\+Listener}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a listener to the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Listener} & Pointer to the listener to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_game_a0a71bee7528478c013f0cc11614a8e24}{Game}}.
+
+\Hypertarget{class_i_game_a76e7f18433de5b988e19b6a221a6ac24}\index{IGame@{IGame}!GetCurrentPlayer@{GetCurrentPlayer}}
+\index{GetCurrentPlayer@{GetCurrentPlayer}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPlayer()}{GetCurrentPlayer()}}
+{\footnotesize\ttfamily \label{class_i_game_a76e7f18433de5b988e19b6a221a6ac24} 
+virtual \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} IGame\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current player. 
+
+\begin{DoxyReturn}{Returns}
+The current player\textquotesingle{}s identifier. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_game_a4d35217c280342b9dbedfb3a1fd39dba}{Game}}.
+
+\Hypertarget{class_i_game_a4e5911dea1e497e4d2e91313de9ff9a6}\index{IGame@{IGame}!GetPlayerObjects@{GetPlayerObjects}}
+\index{GetPlayerObjects@{GetPlayerObjects}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetPlayerObjects()}{GetPlayerObjects()}}
+{\footnotesize\ttfamily \label{class_i_game_a4e5911dea1e497e4d2e91313de9ff9a6} 
+virtual std\+::vector$<$ \mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}} $>$ IGame\+::\+Get\+Player\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the list of player objects in the game. 
+
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily EPlayer} values representing the players. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_game_a585012b5e3bb061aa6eff78d954e01c5}{Game}}.
+
+\Hypertarget{class_i_game_ad1112108dd80dd4b02337c98d046f459}\index{IGame@{IGame}!NotifyListenersOnWin@{NotifyListenersOnWin}}
+\index{NotifyListenersOnWin@{NotifyListenersOnWin}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{NotifyListenersOnWin()}{NotifyListenersOnWin()}}
+{\footnotesize\ttfamily \label{class_i_game_ad1112108dd80dd4b02337c98d046f459} 
+virtual void IGame\+::\+Notify\+Listeners\+On\+Win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies all listeners that a player has won. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a27142036cc8aee1aaa39a78dbbedf68b}{Game}}.
+
+\Hypertarget{class_i_game_a38303e8985020b4efab9d598649938a7}\index{IGame@{IGame}!Produce@{Produce}}
+\index{Produce@{Produce}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{Produce()}{Produce()}}
+{\footnotesize\ttfamily \label{class_i_game_a38303e8985020b4efab9d598649938a7} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_game}{IGame}} $>$ IGame\+::\+Produce (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates and returns a shared pointer to an {\ttfamily \doxylink{class_i_game}{IGame}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to a new {\ttfamily \doxylink{class_i_game}{IGame}} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_i_game_a4f736ed088a9a081ea5cdb356e4abbf3}\index{IGame@{IGame}!RemoveListener@{RemoveListener}}
+\index{RemoveListener@{RemoveListener}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{RemoveListener()}{RemoveListener()}}
+{\footnotesize\ttfamily \label{class_i_game_a4f736ed088a9a081ea5cdb356e4abbf3} 
+virtual void IGame\+::\+Remove\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_game_listener}{IGame\+Listener}} \texorpdfstring{$\ast$}{*}}]{game\+Listener}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a listener from the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Listener} & Pointer to the listener to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_game_a2b51c825df82379aef8c9b651787a7e6}{Game}}.
+
+\Hypertarget{class_i_game_a50100ff153ce69f416fe8c9b4c21baed}\index{IGame@{IGame}!ResetGame@{ResetGame}}
+\index{ResetGame@{ResetGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{ResetGame()}{ResetGame()}}
+{\footnotesize\ttfamily \label{class_i_game_a50100ff153ce69f416fe8c9b4c21baed} 
+virtual void IGame\+::\+Reset\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Resets the game to its initial state. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a4cba6d9dd6895883fe5c9c6f22d7a39a}{Game}}.
+
+\Hypertarget{class_i_game_a4a4212c7893229b53774f35250ba7517}\index{IGame@{IGame}!SwitchPlayers@{SwitchPlayers}}
+\index{SwitchPlayers@{SwitchPlayers}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{SwitchPlayers()}{SwitchPlayers()}}
+{\footnotesize\ttfamily \label{class_i_game_a4a4212c7893229b53774f35250ba7517} 
+virtual void IGame\+::\+Switch\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Switches the active player in the game. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ab1dd521c11366e287218f5a43c4c976d}{Game}}.
+
+\Hypertarget{class_i_game_a7b81b62800b0b21d5a7e110e11b94bde}\index{IGame@{IGame}!UpdateScore@{UpdateScore}}
+\index{UpdateScore@{UpdateScore}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{UpdateScore()}{UpdateScore()}}
+{\footnotesize\ttfamily \label{class_i_game_a7b81b62800b0b21d5a7e110e11b94bde} 
+virtual void IGame\+::\+Update\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_player_8h_a30ddbd351c82b617f2a84ae629bd981b}{EPlayer}}}]{scored\+On}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the score of a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scored\+On} & The player who scored. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_game_a2e7be00cf7db071e59986e3f2b49aed6}{Game}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Soccer/\mbox{\hyperlink{_i_game_8h}{IGame.\+h}}\item 
+Soccer/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}
