@@ -23,12 +23,17 @@ public:
      * @brief Constructs a GameScene object and initializes the timer for updating circle positions.
      * @param parent The parent object for this scene.
      */
-    GameScene(QObject* parent = nullptr);
+    GameScene(QObject* parent = nullptr) : QGraphicsScene(parent) {
+        // Timer to update positions continuously
+        QTimer* timer = new QTimer(this);
+        connect(timer, &QTimer::timeout, this, &GameScene::updateCircles);
+        timer->start(16); // ~60 FPS
+    }
 
     /**
      * @brief Destructor for the GameScene.
      */
-    ~GameScene() override;
+    ~GameScene() override = default;
 
     /**
      * @brief Sets the game instance associated with this scene.

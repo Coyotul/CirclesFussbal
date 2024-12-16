@@ -1,6 +1,5 @@
 #include "GameScene.h"
 #include "QMessageBox"
-#include "GameScene.h"
 #include "MoveCircleCommand.h"
 #include "ApplyImpulseCommand.h"
 
