@@ -195,6 +195,7 @@ void GameScene::ResetBoard()
 
     //ball
     ball = new DraggableCircle(279, 79, 50, true);
+    ball->setColor(Qt::white);
 
 
     //goals

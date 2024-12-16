@@ -46,6 +46,7 @@ void PlayerObjects::Init(GameScene* gameScene)
 
 	//ball
 	m_ball = new DraggableCircle(279, 79, 50, true);
+	m_ball->setColor(Qt::white);
 
 
 	for (size_t i = 0; i < m_players.size(); i++)
