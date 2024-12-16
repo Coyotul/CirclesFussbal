@@ -62,5 +62,14 @@
     <ClInclude Include="TerrainObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ApplyImpulseCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveCircleCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
