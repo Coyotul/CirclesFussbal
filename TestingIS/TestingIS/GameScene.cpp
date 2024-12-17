@@ -1,7 +1,10 @@
-#include "GameScene.h"
+﻿#include "GameScene.h"
 #include "QMessageBox"
 #include "MoveCircleCommand.h"
 #include "ApplyImpulseCommand.h"
+#include <fstream>
+#include <string>
+
 
 /// <summary>
 /// Handles mouse press events at the scene level to enable a drag-and-release movement
@@ -25,10 +28,34 @@
 /// GameScene* scene = new GameScene();
 /// scene->mousePressEvent(new QGraphicsSceneMouseEvent());
 /// </example>
+/// 
+/// 
+
+void ReadScores(int& player1Score, int& player2Score) {
+    std::ifstream file("scores.txt");
+    if (file.is_open()) {
+        file >> player1Score >> player2Score;
+        file.close();
+    }
+    else {
+        // Inițializează scorul dacă fișierul nu există
+        player1Score = 0;
+        player2Score = 0;
+    }
+}
+
+void SaveScores(int player1Score, int player2Score) {
+    std::ofstream file("scores.txt");
+    if (file.is_open()) {
+        file << player1Score << " " << player2Score;
+        file.close();
+    }
+}
 
 void GameScene::SetGame(std::shared_ptr<IGame> game)
 {
     m_game = game;
+    ReadScores(player1Score, player2Score);
 }
 
 void GameScene::OnWin()
@@ -227,21 +254,25 @@ void GameScene::updateCircles() {
                 QPointF rightBottomRight = m_rightGoal->mapToScene(m_rightGoal->boundingRect().bottomRight());
 
                 if (!m_leftGoalScored && isBallInLeftGoal(circle, leftTopLeft, leftBottomLeft)) {
-                    QMessageBox mBox;
-                    mBox.setText("Goal left side");
-                    mBox.exec();
                     m_leftGoalScored = true;
                     circle->freezePosition();
                     resetTriggered = true;
+                    player2Score++;
+                    SaveScores(player1Score, player2Score);
+                    QMessageBox mBox;
+                    mBox.setText(QString("Scor Jucător 1: %1\nScor Jucător 2: %2").arg(player1Score).arg(player2Score));
+                    mBox.exec();
                 }
 
                 if (!m_rightGoalScored && isBallInRightGoal(circle, rightTopRight, rightBottomRight)) {
-                    QMessageBox mBox;
-                    mBox.setText("Goal right side");
-                    mBox.exec();
                     m_rightGoalScored = true;
                     circle->freezePosition();
                     resetTriggered = true;
+                    player1Score++;
+                    SaveScores(player1Score, player2Score);
+                    QMessageBox mBox;
+                    mBox.setText(QString("Scor Jucător 1: %1\nScor Jucător 2: %2").arg(player1Score).arg(player2Score));
+                    mBox.exec();
                 }
             }
             if (!m_rightGoalScored && !m_leftGoalScored) {
@@ -254,7 +285,6 @@ void GameScene::updateCircles() {
         QTimer::singleShot(0, this, &GameScene::ResetBoard);
     }
 }
-
 
 
 void GameScene::clearScene() {

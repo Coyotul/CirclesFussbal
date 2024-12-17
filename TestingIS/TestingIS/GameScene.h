@@ -131,11 +131,13 @@ private:
     QGraphicsRectItem* m_leftGoal = nullptr; ///< Pointer to the left goal in the scene.
     QGraphicsRectItem* m_rightGoal = nullptr; ///< Pointer to the right goal in the scene.
     std::function<void(GameScene*)> m_ResetFunction; ///< Function to reset the board.
-
+    
     std::vector<std::shared_ptr<Command>> commandQueue; ///< The command queue for queued actions.
 
     bool m_leftGoalScored = false;  ///< Tracks if the left-side goal has been scored.
     bool m_rightGoalScored = false; ///< Tracks if the right-side goal has been scored.
+
+    int player1Score = 0, player2Score = 0;
 
     bool isDragging = false; ///< Indicates whether a circle is being dragged.
     QPointF initialMousePos; ///< The initial mouse position when dragging starts.
