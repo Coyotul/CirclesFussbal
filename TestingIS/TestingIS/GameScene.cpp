@@ -55,7 +55,7 @@ void SaveScores(int player1Score, int player2Score) {
 void GameScene::SetGame(std::shared_ptr<IGame> game)
 {
     m_game = game;
-    ReadScores(player1Score, player2Score);
+    SaveScores(0, 0);
 }
 
 void GameScene::OnWin()
@@ -174,8 +174,6 @@ bool GameScene::isBallInRightGoal(const DraggableCircle* ball, const QPointF& to
 
 void GameScene::ResetBoard()
 {
-
-
     m_ResetFunction(this);
     clearScene();
     DraggableCircle* ball = nullptr;
@@ -236,6 +234,12 @@ void GameScene::ResetBoard()
     {
         this->addItem(players[i]);
     }
+
+}
+
+void GameScene::SetScoreText(QGraphicsTextItem* scoreText)
+{
+	m_scoreText = scoreText;
 }
 
 
@@ -259,9 +263,18 @@ void GameScene::updateCircles() {
                     resetTriggered = true;
                     player2Score++;
                     SaveScores(player1Score, player2Score);
-                    QMessageBox mBox;
-                    mBox.setText(QString("Scor Jucător 1: %1\nScor Jucător 2: %2").arg(player1Score).arg(player2Score));
-                    mBox.exec();
+                    // message box
+                    if (player2Score == 3) {
+						QMessageBox msgBox;
+						msgBox.setText("Blue team wins!");
+						msgBox.exec();
+						OnWin();
+                        SaveScores(0, 0);
+                        player2Score = 0;
+                        player1Score = 0;
+					}
+
+                    m_scoreText->setPlainText(QString("Red: %1 - Blue: %2").arg(player1Score).arg(player2Score));
                 }
 
                 if (!m_rightGoalScored && isBallInRightGoal(circle, rightTopRight, rightBottomRight)) {
@@ -270,9 +283,19 @@ void GameScene::updateCircles() {
                     resetTriggered = true;
                     player1Score++;
                     SaveScores(player1Score, player2Score);
-                    QMessageBox mBox;
-                    mBox.setText(QString("Scor Jucător 1: %1\nScor Jucător 2: %2").arg(player1Score).arg(player2Score));
-                    mBox.exec();
+
+                    // message box
+                    if (player1Score == 3) {
+                        QMessageBox msgBox;
+                        msgBox.setText("Red team wins!");
+                        msgBox.exec();
+                        OnWin();
+                        SaveScores(0, 0);
+                        player1Score = 0;
+                        player2Score = 0;
+                    }
+
+                    m_scoreText->setPlainText(QString("Red: %1 - Blue: %2").arg(player1Score).arg(player2Score));
                 }
             }
             if (!m_rightGoalScored && !m_leftGoalScored) {

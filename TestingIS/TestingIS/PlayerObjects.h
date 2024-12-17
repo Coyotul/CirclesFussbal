@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "GameScene.h"
+#include <QGraphicsTextItem>
 
 /**
  * @class PlayerObjects
@@ -28,6 +29,10 @@ private:
      */
     void Init(GameScene* gameScene);
 
+    QGraphicsTextItem* m_scoreText;
+    int m_redScore = 0;
+    int m_blueScore = 0;
+
 public:
     /**
      * @brief Constructor for PlayerObjects.
@@ -46,6 +51,8 @@ public:
      * @param gameScene The GameScene object where the player objects will be added after resetting.
      */
     void ResetPositions(GameScene* gameScene);
+
+    void UpdateScore(int redScore, int blueScore);
 
     /**
      * @brief Gets the ball object.

@@ -7,6 +7,7 @@
 #include "IGame.h"
 #include "IGameListener.h"
 #include "Command.h"
+#include <QGraphicsTextItem>
 
 /**
  * @class GameScene
@@ -75,6 +76,9 @@ public:
      */
     void executeCommands();
 
+    void SetScoreText(QGraphicsTextItem* scoreText);
+
+
 protected:
     /**
      * @brief Handles mouse press events. Starts the drag or applies the impulse when the mouse is released.
@@ -126,6 +130,7 @@ private:
      */
     void clearScene();
 
+
 private:
     std::shared_ptr<IGame> m_game; ///< The game instance associated with the scene.
     QGraphicsRectItem* m_leftGoal = nullptr; ///< Pointer to the left goal in the scene.
@@ -136,6 +141,9 @@ private:
 
     bool m_leftGoalScored = false;  ///< Tracks if the left-side goal has been scored.
     bool m_rightGoalScored = false; ///< Tracks if the right-side goal has been scored.
+
+
+    QGraphicsTextItem* m_scoreText;
 
     int player1Score = 0, player2Score = 0;
 

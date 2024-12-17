@@ -42,6 +42,14 @@ void PlayerObjects::Init(GameScene* gameScene)
 	m_players.emplace_back(blueDef1);
 	m_players.emplace_back(blueDef2);
 	m_players.emplace_back(blueDef3);
+
+    m_scoreText = new QGraphicsTextItem("Red: 0 - Blue: 0");
+    m_scoreText->setFont(QFont("Arial", 24));
+    m_scoreText->setDefaultTextColor(Qt::white);
+    m_scoreText->setPos(180, -300);
+
+    gameScene->addItem(m_scoreText);
+    gameScene->SetScoreText(m_scoreText);
 #pragma endregion
 
 	//ball
@@ -54,6 +62,11 @@ void PlayerObjects::Init(GameScene* gameScene)
 		gameScene->addItem(m_players[i]);
 		gameScene->addItem(m_ball);
 	}
+}
+
+void PlayerObjects::UpdateScore(int redScore, int blueScore)
+{
+	m_scoreText->setPlainText("Red: " + QString::number(redScore) + " - Blue: " + QString::number(blueScore));
 }
 
 PlayerObjects::PlayerObjects(GameScene* gameScene)
@@ -124,3 +137,5 @@ DraggableCircle* PlayerObjects::GetBall()
 {
 	return m_ball;
 }
+
+
